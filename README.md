@@ -65,3 +65,4 @@ fpga-projects/
 Each subfolder follows the structure above. This makes a great portfolio
 to show during industrial training interviews — clear progression, clean
 history, reproducible builds.
+# fpga-proojects
