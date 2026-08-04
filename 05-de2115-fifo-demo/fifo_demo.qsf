@@ -1,0 +1,75 @@
+# =========================================================================
+# fifo_demo.qsf - Full Quartus project settings, generated to avoid the
+# New Project Wizard entirely. This file (+ fifo_demo.qpf) IS the project
+# - Quartus reads both automatically based on filename matching the
+# project/revision name.
+# =========================================================================
+
+# ---- Device ----
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY fifo_demo_top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "21.1"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+
+# ---- Source files ----
+set_global_assignment -name VERILOG_FILE src/fifo_demo_top.v
+set_global_assignment -name VERILOG_FILE src/sync_fifo.v
+set_global_assignment -name VERILOG_FILE src/debounce.v
+
+# ---- Clock (50 MHz) ----
+set_location_assignment PIN_Y2 -to CLOCK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+
+# ---- Push buttons (KEY[2:0]) - active low ----
+set_location_assignment PIN_M23 -to KEY[0]
+set_location_assignment PIN_M21 -to KEY[1]
+set_location_assignment PIN_N21 -to KEY[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[2]
+
+# ---- Slide switches (SW[7:0]) - data input ----
+set_location_assignment PIN_AB28 -to SW[0]
+set_location_assignment PIN_AC28 -to SW[1]
+set_location_assignment PIN_AC27 -to SW[2]
+set_location_assignment PIN_AD27 -to SW[3]
+set_location_assignment PIN_AB27 -to SW[4]
+set_location_assignment PIN_AC26 -to SW[5]
+set_location_assignment PIN_AD26 -to SW[6]
+set_location_assignment PIN_AB26 -to SW[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7]
+
+# ---- Red LEDs (LEDR[9:0]) ----
+set_location_assignment PIN_G19 -to LEDR[0]
+set_location_assignment PIN_F19 -to LEDR[1]
+set_location_assignment PIN_E19 -to LEDR[2]
+set_location_assignment PIN_F21 -to LEDR[3]
+set_location_assignment PIN_F18 -to LEDR[4]
+set_location_assignment PIN_E18 -to LEDR[5]
+set_location_assignment PIN_J19 -to LEDR[6]
+set_location_assignment PIN_H19 -to LEDR[7]
+set_location_assignment PIN_J17 -to LEDR[8]
+set_location_assignment PIN_G17 -to LEDR[9]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[9]
+
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
